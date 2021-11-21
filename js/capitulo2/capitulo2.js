@@ -1,76 +1,3 @@
-// let pc1 = {
-//     nombre: "DaltoPC",
-//     procesador: "Intel Core I7",
-//     ram: "16GB",
-//     espacio: "1TB"
-// }
-
-// let nombre = pc1["nombre"];
-// let procesador = pc1["procesador"];
-// let ram = pc1["ram"];
-// let espacio = pc1["espacio"];
-
-// frase = `El nombre de mi pC es: <b>${nombre}</b> <br>
-//          El procesador es: <b>${procesador}</b> <br>
-//          La ram es de: <b>${ram}</b> <br>
-//          Y tiene un espacio de: <b>${espacio}</b>`;
-
-// document.write(frase + "<br><br>")
-
-
-// //////////////////////////////////////////////////
-
-// function saludar(){
-//     respuesta = prompt("Hola Cristian, Cómo te sientes hoy?");
-//     if (respuesta == "bien"){
-//         alert("Me alegro mucho");
-//     }
-//     else {
-//         alert("Una pena, ya habrán días mejores");
-//     }
-// }
-
-// function suma(a,b){
-//     let res = a + b;
-//     return res;
-// }
-
-// let resultado = suma(5,8);
-
-
-
-
-// // function saludar2(nombre){
-// //     let saludo = `Hola ${nombre} como estás?`;
-// //     return saludo;
-// // }
-
-// // const saludar2 = function(nombre){
-// //     let saludo = `Hola ${nombre} como estás?`;
-// //     return saludo;
-// // }
-
-// // const saludar2 = (nombre)=> {
-// //     let saludo = `Hola ${nombre} como estás?`;
-// //     return saludo;
-// // }
-
-// // const saludar2 = nombre=> {
-// //     let saludo = `Hola ${nombre} como estás?`;
-// //     return saludo;
-// // }
-
-// const saludar2 = nombre=> document.write("Hola " + nombre + " cómo estás?");
-
-// saludar2("Cristian");
-
-// // let greet = saludar2("Cristian");
-
-// // document.write(greet);
-
-
-
-
 /*
 
 
@@ -117,7 +44,7 @@ const validarInvitado = () => {
     }
     else {
         if (listaInvitados[i][1] >= 18){
-            if (listaInvitados[i][2] == 2){
+            if (personasDentro == 0){
                 document.write(`El ${listaInvitados[i][0]} se llama ${listaInvitados[i][3]}, tiene ${listaInvitados[i][1]} años de edad y llegó a las ${listaInvitados[i][2]}. ENTRÓ PRIMERO Y GRATIS. <br>`);
                 personasDentro++;
             }
