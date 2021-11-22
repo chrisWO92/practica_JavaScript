@@ -35,6 +35,7 @@ const nombreAleatorio = () => {
 let listaInvitados = [];
 let personasDentro = 0;
 let dineroRecaudado = 0;
+let i = 0;
 let time = 1;
 
 const validarInvitado = () => {
@@ -60,13 +61,18 @@ const validarInvitado = () => {
     }
 
 }
-
-for (i = 0;i <= 30;i++){
-
-    listaInvitados[i] = [`Invitado ${i}`,aleatorio(12,30),time,nombreAleatorio()];
+while (personasDentro < 10) {
+    listaInvitados[i] = [`Cliente ${i}`,aleatorio(12,30),time,nombreAleatorio()];
     validarInvitado();
+    i++;
     time += 0.25;
 }
+// for (i = 0;i <= 30;i++){
+
+//     listaInvitados[i] = [`Invitado ${i}`,aleatorio(12,30),time,nombreAleatorio()];
+//     validarInvitado();
+//     time += 0.25;
+// }
 
 document.write(`<br><br>Entraron ${personasDentro} personas y se recaudaron ${dineroRecaudado} ARS.`)
 
