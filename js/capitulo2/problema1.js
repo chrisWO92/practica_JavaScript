@@ -65,7 +65,7 @@ while (personasDentro < 40 && time < 7) {
     listaInvitados[i] = [`Cliente ${i}`,aleatorio(12,30),time,nombreAleatorio()];
     validarInvitado();
     i++;
-    time += 0.05;
+    time += 0.15;
 }
 // for (i = 0;i <= 30;i++){
 
