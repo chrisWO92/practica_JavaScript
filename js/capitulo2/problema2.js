@@ -55,7 +55,18 @@ for (i = 0; i < 30; i++){
 
 
 for (alumno in alumnoAsistencias){
-    let resultadoAlumno = `${alumnoAsistencias[alumno][0]} -- >  Asistencias: ${alumnoAsistencias[alumno][1]} /  Ausencias: ${alumnoAsistencias.length - alumnoAsistencias[alumno][1]}<br><br>`;
+    let resultadoAlumno = `${alumnoAsistencias[alumno][0]} -- >  Asistencias: ${alumnoAsistencias[alumno][1]} /  Ausencias: ${alumnoAsistencias.length - alumnoAsistencias[alumno][1]}`;
+
+    if (alumnoAsistencias[alumno][1] > 0.65*30){
+        resultadoAlumno += "<b style='color:red'> REPROBADO POR INASISTENCIAS </b>"
+        resultadoAlumno += "<br><br>"
+    }
+    else {
+        resultadoAlumno += "<b style='color:green'> ASISTENCIAS CUMPLIDAS </b>"
+        resultadoAlumno += "<br><br>"
+    }
+
+
     document.write(resultadoAlumno);
 }
 
