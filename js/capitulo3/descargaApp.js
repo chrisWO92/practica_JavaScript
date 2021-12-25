@@ -41,19 +41,27 @@ class App {
     }
 
     abrir(){
-        if (this.abierta == false){
+        if (this.abierta == false && this.instalada == true){
             this.abierta = true;
             document.write(`App abierta <br><br>`);
-        }else{
+        }
+        else if (this.instalada == false){
+            document.write(`La App no está instalada aún <br><br>`);
+        }                
+        else{
             document.write(`La App ya está abierta <br><br>`);
         }
     }
 
     cerrar(){
-        if (this.abierta == true){
+        if (this.abierta == true && this.instalada == true){
             this.abierta = false;
             document.write(`App cerrada <br><br>`);
-        }else{
+        }
+        else if (this.instalda == false){
+            document.write(`La App no está instalada aún <br><br>`);
+        }
+        else{
             document.write(`La App ya está cerrada <br><br>`);
         }
     }
@@ -75,4 +83,7 @@ app1.instalar();
 app1.abrir();
 app1.cerrar();
 app1.desinstalar();
+
+app1.abrir();
+app1.cerrar();
 
