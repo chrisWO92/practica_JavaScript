@@ -14,6 +14,9 @@ CREAR SOLUCIONES:
 
 */
 
+
+// Se creear el arrray con la información.
+
 let materias = {
     fisica: ["fisica",90,7,4],
     matematicas: ["matematicas",95,6,3],
@@ -26,6 +29,9 @@ let materias = {
     estadistica: ["estadistica",100,9,4],
     programacion: ["programacion",100,10,4]
 }
+
+
+// Se crean funciones para corroborar el cumplimiento o incumplimiento de los criterios de aprobación, uno por uno.
 
 const asistencia = (materia) => {
     let asistencias = materias[materia][1];
@@ -57,11 +63,17 @@ const trabajos = (materia) => {
     }
 }
 
+
+// Función para mostrar la información de la materia en particular.
+
 const info = (materia) => {
     console.log(`
     ${materias[materia][0]} --> Asistencia: ${materias[materia][1]}  Promedio: ${materias[materia][2]}  Trabajos: ${materias[materia][3]}
     `);
 }
+
+
+// Función para evaluar todos los criterios de aprobación juntos, y mostrar si el alumno está aprobado o desaprobado.
 
 const apruebaDesaprueba = (materia) => {
     if (asistencia(materia) && promedio(materia) && trabajos(materia)){
@@ -97,6 +109,8 @@ const apruebaDesaprueba = (materia) => {
 }
 
 
+// Función para ejecutar la solución con todas las materias.
+
 const simulacion = () => {
     for (i in materias){
         info(i);
@@ -104,5 +118,11 @@ const simulacion = () => {
     }
 }
 
+
+// Llamada a la función simulación.
+
 simulacion();
+
+
+/* Me falta estructurar la salida como tabla con console.table() */
 
