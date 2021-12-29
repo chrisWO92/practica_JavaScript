@@ -14,6 +14,9 @@ CREAR SOLUCIONES:
 
 */
 
+
+// Se crea el array con la información.
+
 let materias = {
     fisica: ["Nataly Betancour",["Andrés","Sofia","Cristian","Hugo","Lionel","Dalto","Evelia"],"fisica"],
     matematicas: ["Guillermo Cervantes",["Humberto","Rodrigo","Cesar","Juan","Fito","Kiko","Britney"],"matematicas"],
@@ -28,18 +31,18 @@ let materias = {
 } 
 
 
-const consultaProfeAlumnos = (materia) => {
+// Función que retorna una cadena de texto con la información de la materia
 
-    let mat = materia;
+const consultaProfeAlumnos = (materia) => {
 
     let resultado = 
         `
-        <b>Materia: ${materias[mat][2]}</b>
+        <b>Materia: ${materias[materia][2]}</b>
         <br><br>
-        Profesor: ${materias[mat][0]}
+        Profesor: ${materias[materia][0]}
         <br>
         Alumnos:
-        ${materias[mat][1][0]}, ${materias[mat][1][1]}, ${materias[mat][1][2]}, ${materias[mat][1][3]}, ${materias[mat][1][4]}, ${materias[mat][1][5]}, ${materias[mat][1][6]}.
+        ${materias[materia][1][0]}, ${materias[materia][1][1]}, ${materias[materia][1][2]}, ${materias[materia][1][3]}, ${materias[materia][1][4]}, ${materias[materia][1][5]}, ${materias[materia][1][6]}.
         <br><br>
         `;
 
@@ -47,10 +50,73 @@ const consultaProfeAlumnos = (materia) => {
         
 }
 
-const clasesSofia = (materia) => {
-    
+
+// Función para retornar si sofía está en una clase o no. Retorna 1 si se encuentra y 0 si no se encuentra.
+
+const inClass = (materia) => {
+    let count = 0;
+    for (alumno in materias[materia][1]){
+        if (materias[materia][1][alumno] == "Sofia"){
+            count += 1;
+        }
+    }
+    return count;
 }
 
-document.write(consultaProfeAlumnos("matematicas"));
+
+// Función que suma la cantidad de materias en la que está inscrita Sofia. Usa la función inClass().
+// Esta función también arma un array nuevo con las materias en las que está inscrita Sofía y su respectivo profesor.
+
+const clasesSofia = () => {
+    let count = 0;
+    let array = [];
+    let i = 0;
+    for (materia in materias){
+        count = count + inClass(materia);
+        if (inClass(materia) > 0){
+            array[i] = [materia,materias[materia][0]];
+            i += 1;
+        }
+    }
+    return [count, array];
+}
+
+
+// Función que toma el retorno de la función consultaProfeAlumnos() y lo imprime en pantalla para todas las materias.
+
+const infoMaterias = () => {
+    for (materia in materias){
+        document.write(consultaProfeAlumnos(materia) + "<br><br>");
+
+    }
+}
+
+
+// Función para simular la interacción con el usuario.
+
+const simulacion = () => {
+
+    infoMaterias();
+
+    document.write(
+        `
+        <b>Sofia está en ${clasesSofia()[0]} materias.</b>
+        <br>
+        `
+    );
+
+    document.write(`<br>Las materias en las que está son las siguientes: <br><br>`);
+
+    for (i in clasesSofia()[1]){
+        document.write(`Materia: ${clasesSofia()[1][i][0]} // Profesor: ${clasesSofia()[1][i][1]}<br>`);
+    }
+
+}
+
+
+// Llamada a la función interactiva.
+
+simulacion();
+
 
 
