@@ -15,16 +15,16 @@ CREAR SOLUCIONES:
 */
 
 let materias = {
-    fisica = ["fisica",90,7,4],
-    matematicas = ["matematicas",95,6,3],
-    quimica = ["quimica",100,8,4],
-    historia = ["historia",91,9,3],
-    ingles = ["ingles",100,10,4],
-    gimnasia = ["gimnasia",85,7,3],
-    geografia = ["geografia",90,8,4],
-    frances = ["frances",70,6,2],
-    estadistica = ["estadistica",100,9,4],
-    programacion = ["programacion",100,10,4]
+    fisica: ["fisica",90,7,4],
+    matematicas: ["matematicas",95,6,3],
+    quimica: ["quimica",100,8,4],
+    historia: ["historia",91,9,3],
+    ingles: ["ingles",100,10,4],
+    gimnasia: ["gimnasia",85,7,3],
+    geografia: ["geografia",90,8,4],
+    frances: ["frances",70,6,2],
+    estadistica: ["estadistica",100,9,4],
+    programacion: ["programacion",100,10,4]
 }
 
 const asistencia = (materia) => {
@@ -58,30 +58,51 @@ const trabajos = (materia) => {
 }
 
 const info = (materia) => {
-    return `
+    console.log(`
     ${materias[materia][0]} --> Asistencia: ${materias[materia][1]}  Promedio: ${materias[materia][2]}  Trabajos: ${materias[materia][3]}
-    `
+    `);
 }
 
 const apruebaDesaprueba = (materia) => {
     if (asistencia(materia) && promedio(materia) && trabajos(materia)){
-        return true;
+        console.log("%c MATERIA APROBADA", "color: green; font-weight: bolder");
+        console.log("%c Asistencia cumplida", "color: green");
+        console.log("%c Promedio cumplido", "color: green");
+        console.log("%c Trabajos cumplidos", "color: green");
     }
     else{
-        return false;
+        console.log("%c MATERIA DESAPROBADA", "color: red");
+
+        if(asistencia(materia) == false){
+            console.log("%c Asistencia no cumplida", "color: red");
+        }
+        else {
+            console.log("%c Asistencia cumplida", "color: green");
+        }
+
+        if(promedio(materia) == false){
+            console.log("%c Promedio no cumplido", "color: red");
+        }
+        else {
+            console.log("%c Promedio cumplido", "color: green");
+        }
+
+        if(trabajos(materia) == false){
+            console.log("%c Trabajos no cumplidos", "color: red");
+        }
+        else {
+            console.log("%c Trabajos cumplidos", "color: green");
+        }
     }
 }
 
 
 const simulacion = () => {
-    alert(
-    `
-    Hola Cofla! Bienvenido a tu programa interactivo de consulta para tus calificaciones escolares.
-    <br><br>
-    
-    `
-    );
+    for (i in materias){
+        info(i);
+        apruebaDesaprueba(i);
+    }
 }
 
-
+simulacion();
 
