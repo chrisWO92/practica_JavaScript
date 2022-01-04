@@ -76,3 +76,51 @@ _____PROPIEDADES____:
 -LOG2E
 -LOG10E
 
+
+MANIPULACIÓN DEL DOM:
+
+Document - Método de Selección de Elementos
+
+    -getElementById() - Selecciona un elemento por ID.
+    -getElementByTagName() - Selecciona todos los elementos que ccoincidan con el nombre de la etiqqueta especificada.
+    -querySelector() - Devuelve el primer elemento que coincida con el grupo especificado de selectores.
+    -querySelectorAll() - Devuelve todos los elementos que coincidan con el grupo especificado de selectores.
+
+
+Métodos para definir, obtener y eliminar valores de atributos.
+
+    -setAttribute() - Modifica el valor de un atributo
+    -getAttribute() - Obtiene el valor de un atributo
+    -removeAttribute() - Remueve el valor de un atributo
+
+Atributos globales:
+
+    -class - lista de clases del elemento por espacios
+    -contenteditable - indica si elemento puede ser modificable por el usuario (bool)
+    -dir - indica direccionalidad del texto.
+    -hidden - indica si el elemento aún no es, o ya no es, relevante.
+    -id - define un identificador único.
+    -style - contiene declaraciones de estilo CSS para ser aplicadas al elemento.
+    -tabindex - indica si el elemento puede obtener un focus de input.
+    -title - contiene un texto con información relacionada al elemento al que pertenece.
+
+
+Atributos de Inputs:
+
+    -className
+    -value
+    -type
+    -accept
+    -form
+    -minLength
+    -placeholder
+    -required
+
+Clases, classList y Métodos de classList
+
+    -add() - añade una clase
+    -remove() - remueve una clase
+    -item() - devuelve la clase del indice especificado
+    -contains() - verifica si ese elemento posee o no, la clase especificada.
+    -replace() - reemplaza una clase por otra
+    -toggle() - si no tiene la clase especificada, la agrega, si ya la tiene, la elimina.
