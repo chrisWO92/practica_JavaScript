@@ -125,5 +125,4 @@ simulacion();
 
 console.table(materias);
 
-/* Me falta estructurar la salida como tabla con console.table() */
 
