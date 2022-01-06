@@ -124,3 +124,53 @@ Clases, classList y Métodos de classList
     -contains() - verifica si ese elemento posee o no, la clase especificada.
     -replace() - reemplaza una clase por otra
     -toggle() - si no tiene la clase especificada, la agrega, si ya la tiene, la elimina.
+
+
+Obtención y Modificación de Elementos
+
+    -textContent - devuelve el texto de cualquier nodo.
+    -innerHTML - devuelve el contenido html de un elemento.
+    -outerHTML - devuelve el codigo HTML completo del elemento.
+
+
+Creación de Elementos
+
+    -createElements()
+    -appendChild()
+    -createDocumentFragment()
+
+
+Obtención y modificación de Childs (Hijos):
+
+    -firstChild
+    -lastChild
+    -firstElementChild
+    -lastElementChild
+    -childNodes
+    -children
+
+Métodos de Childs
+
+    -replaceChild()
+    -removeChild()
+    -hasChildNodes()
+
+
+Propiedades de parents (Padres)
+
+-parentElement
+-parentNode
+
+
+Propiedades de Siblings
+
+    -nextSibling
+    -previousSibling
+    -nextElementSibling
+    -previousElementSibling
+
+
+Nodos - Extras
+
+    -closest()
+
